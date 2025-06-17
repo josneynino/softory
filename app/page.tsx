@@ -372,11 +372,11 @@ export default function SoftoryLanding() {
                   link: "https://github.com/jozneydeveloper"
                 },
                 {
-                  title: "App de Gestión",
-                  description: "Aplicación móvil para gestión de inventarios con sincronización en tiempo real y reportes avanzados.",
-                  image: "/placeholder.svg?height=300&width=400",
-                  tags: ["React Native", "Firebase", "TypeScript"],
-                  link: "https://github.com/jozneydeveloper"
+                  title: "Finzo - Gestión Financiera",
+                  description: "Aplicación web para gestión financiera personal y empresarial, con seguimiento de ingresos, gastos, presupuestos y reportes financieros detallados.",
+                  image: "/assets/finzo-dashboard.jpg",
+                  tags: ["React.js", "TypeScript", "Firebase", "Tailwind CSS", "Zustand"],
+                  link: "https://finzo-web.vercel.app"
                 },
                 {
                   title: "Dashboard Analytics",
