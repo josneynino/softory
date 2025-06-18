@@ -143,7 +143,6 @@ export default function SoftoryLanding() {
                   { id: "servicios", label: "Servicios" },
                   { id: "proceso", label: "Proceso" },
                   { id: "proyectos", label: "Proyectos" },
-                  { id: "testimonios", label: "Testimonios" },
                   { id: "contacto", label: "Contacto" },
                 ].map((item) => (
                   <button
@@ -201,7 +200,6 @@ export default function SoftoryLanding() {
                 { id: "servicios", label: "Servicios" },
                 { id: "proceso", label: "Proceso" },
                 { id: "proyectos", label: "Proyectos" },
-                { id: "testimonios", label: "Testimonios" },
                 { id: "contacto", label: "Contacto" },
               ].map((item) => (
                 <button
@@ -356,33 +354,36 @@ export default function SoftoryLanding() {
         <section id="proyectos" className="py-20 bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Proyectos Destacados</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">En Desarrollo</h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Algunos de nuestros trabajos más recientes que demuestran nuestra experiencia
+                Proyectos que estamos construyendo actualmente con las últimas tecnologías
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "E-commerce Moderno",
-                  description: "Plataforma de comercio electrónico con panel administrativo completo y pasarela de pagos integrada.",
-                  image: "/placeholder.svg?height=300&width=400",
-                  tags: ["React", "Node.js", "MongoDB"],
-                  link: "https://github.com/jozneydeveloper"
+                  title: "Fuego & Corte",
+                  description: "Plataforma web para restaurante de cortes finos y parrilla, con sistema de reservaciones, menú digital y gestión de pedidos en línea. Desarrollado con Next.js.",
+                  image: "/assets/fuego-corte-dashboard.png",
+                  tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+                  status: "En desarrollo",
+                  link: "https://fuego-corte.vercel.app"
                 },
                 {
                   title: "Finzo - Gestión Financiera",
                   description: "Aplicación web para gestión financiera personal y empresarial, con seguimiento de ingresos, gastos, presupuestos y reportes financieros detallados.",
                   image: "/assets/finzo-dashboard.jpg",
                   tags: ["React.js", "TypeScript", "Firebase", "Tailwind CSS", "Zustand"],
+                  status: "En desarrollo",
                   link: "https://finzo-web.vercel.app"
                 },
                 {
-                  title: "Dashboard Analytics",
-                  description: "Panel de control con visualizaciones interactivas para análisis de datos empresariales.",
+                  title: "E-commerce Moderno",
+                  description: "Plataforma de comercio electrónico con panel administrativo completo y pasarela de pagos integrada. En desarrollo con React y Node.js.",
                   image: "/placeholder.svg?height=300&width=400",
-                  tags: ["Vue.js", "Python", "PostgreSQL"],
+                  tags: ["React", "Node.js", "MongoDB"],
+                  status: "En desarrollo",
                   link: "https://github.com/jozneydeveloper"
                 },
               ].map((project, index) => (
@@ -394,14 +395,19 @@ export default function SoftoryLanding() {
                   <Card className="border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                     <div className="aspect-video bg-gray-100 dark:bg-gray-800">
                       <img
-                        src={project.image || "/placeholder.svg"}
+                        src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
                     </div>
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{project.title}</h3>
+                      <div className="flex justify-between items-start mb-3">
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
+                        <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-sm rounded-full">
+                          {project.status}
+                        </span>
+                      </div>
                       <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{project.description}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.tags.map((tag, tagIndex) => (
@@ -416,98 +422,13 @@ export default function SoftoryLanding() {
                         asChild
                       >
                         <a href={project.link} target="_blank" rel="noopener noreferrer">
-                          Ver proyecto
+                          Ver progreso
                         </a>
                       </Button>
                     </CardContent>
                   </Card>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </section>
-      </SectionAnimation>
-
-      {/* Testimonials Section */}
-      <SectionAnimation delay={0.8}>
-        <section id="testimonios" className="py-20 bg-gray-50 dark:bg-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Lo que dicen nuestros clientes</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                La satisfacción de nuestros clientes es nuestra mejor carta de presentación
-              </p>
-            </div>
-
-            <div className="relative">
-              <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex">
-                  {[
-                    {
-                      name: "María González",
-                      position: "CEO, TechStart",
-                      avatar: "/placeholder.svg?height=80&width=80",
-                      content: "Softory transformó completamente nuestra presencia digital. El equipo es profesional y los resultados superaron nuestras expectativas.",
-                      rating: 5,
-                    },
-                    {
-                      name: "Carlos Ruiz",
-                      position: "Director, InnovateCorp",
-                      avatar: "/placeholder.svg?height=80&width=80",
-                      content: "La aplicación móvil que desarrollaron ha aumentado nuestra productividad en un 40%. Excelente trabajo y soporte continuo.",
-                      rating: 5,
-                    },
-                    {
-                      name: "Ana Martínez",
-                      position: "Fundadora, GrowthLab",
-                      avatar: "/placeholder.svg?height=80&width=80",
-                      content: "Profesionales excepcionales. Entendieron perfectamente nuestra visión y la convirtieron en una solución tecnológica robusta.",
-                      rating: 5,
-                    },
-                  ].map((testimonial, index) => (
-                    <div key={index} className="flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] p-4">
-                      <Card className="border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 h-full">
-                        <CardContent className="p-8">
-                          <div className="flex mb-4">
-                            {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                            ))}
-                          </div>
-                          <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed italic">"{testimonial.content}"</p>
-                          <div className="flex items-center">
-                            <img
-                              src={testimonial.avatar || "/placeholder.svg"}
-                              alt={testimonial.name}
-                              className="w-12 h-12 rounded-full mr-4"
-                              loading="lazy"
-                            />
-                            <div>
-                              <h4 className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</h4>
-                              <p className="text-gray-600 dark:text-gray-300 text-sm">{testimonial.position}</p>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-900 shadow-lg rounded-full border-gray-200 dark:border-gray-700"
-                onClick={scrollPrev}
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-900 shadow-lg rounded-full border-gray-200 dark:border-gray-700"
-                onClick={scrollNext}
-              >
-                <ChevronRight className="h-4 w-4" />
-              </Button>
             </div>
           </div>
         </section>
@@ -607,7 +528,7 @@ export default function SoftoryLanding() {
                     asChild
                   >
                     <a 
-                      href="https://instagram.com/jozneydeveloper" 
+                      href="https://www.instagram.com/softory_tech/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
@@ -616,6 +537,68 @@ export default function SoftoryLanding() {
                   </Button>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+      </SectionAnimation>
+
+      {/* Empresas que han confiado en nosotros */}
+      <SectionAnimation delay={0.8}>
+        <section id="empresas" className="py-20 bg-gray-50 dark:bg-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Empresas que han confiado en nosotros</h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Estas son algunas de las empresas con las que hemos trabajado y colaborado
+              </p>
+            </div>
+            <div className="overflow-x-auto">
+              <div className="flex gap-8 items-center justify-center min-w-[600px]">
+                {/* Logo 1 */}
+                <div className="flex-shrink-0">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="/assets/logo-looksy.png"
+                      alt="Logo Looksy"
+                      className="h-16 w-32 object-contain grayscale hover:grayscale-0 transition-all duration-300 bg-white rounded-xl shadow p-2 border border-gray-200"
+                    />
+                    <span className="mt-2 text-sm font-semibold text-gray-700">Looksy Moda</span>
+                  </div>
+                </div>
+                {/* Logo 2 */}
+                <div className="flex-shrink-0">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="/assets/logo-finzo1.png"
+                      alt="Logo Finzo"
+                      className="h-16 w-32 object-contain grayscale hover:grayscale-0 transition-all duration-300 bg-white rounded-xl shadow p-2 border border-gray-200"
+                    />
+                    <span className="mt-2 text-sm font-semibold text-gray-700">Finzo</span>
+                  </div>
+                </div>
+                {/* Logo 3 */}
+                <div className="flex-shrink-0">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="/assets/logo-fuego-corte.png"
+                      alt="Logo Fuego Corte"
+                      className="h-16 w-32 object-contain grayscale hover:grayscale-0 transition-all duration-300 bg-white rounded-xl shadow p-2 border border-gray-200"
+                    />
+                    <span className="mt-2 text-sm font-semibold text-gray-700">Fuego & Corte</span>
+                  </div>
+                </div>
+                {/* Logo 4 */}
+                <div className="flex-shrink-0">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="/assets/logo-nivelar.png"
+                      alt="Logo Nivelar"
+                      className="h-16 w-32 object-contain grayscale hover:grayscale-0 transition-all duration-300 bg-white rounded-xl shadow p-2 border border-gray-200"
+                    />
+                    <span className="mt-2 text-sm font-semibold text-gray-700">Nivelar</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
