@@ -3,6 +3,7 @@
 import { Users, Globe, Heart, TrendingUp } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const values = [
   {
@@ -32,6 +33,9 @@ export default function AboutCompany() {
     <section id="sobre-softory" className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-12">
+          <div className="flex justify-center mb-6">
+            <Image src="/assets/softory-logo-ico-.png" alt="Logo Softory" width={80} height={80} className="rounded-full shadow" />
+          </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Sobre Softory</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Somos una empresa mexicana de tecnología dedicada a transformar ideas en software escalable y soluciones digitales de alto impacto.
