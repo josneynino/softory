@@ -34,7 +34,7 @@ export default function AboutCompany() {
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-12">
           <div className="flex flex-col items-center mb-6">
-            <Image src="/assets/softory-logo.png" alt="Logo Softory" width={100} height={100} className="rounded-full shadow object-cover" />
+            <Image src="/assets/softory-2.png" alt="Logo Softory" width={100} height={100} className="rounded-full shadow object-cover" />
             <span className="mt-2 text-2xl font-bold text-gray-900">Softory</span>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Sobre Softory</h2>

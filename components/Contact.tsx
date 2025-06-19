@@ -187,10 +187,9 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          {/* Contact Information */}
+          {/* Columna izquierda: Métodos de contacto y redes sociales */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Información de Contacto</h3>
-            
             {/* Contact Methods */}
             <div className="space-y-6 mb-8">
               {contactMethods.map((method, index) => {
@@ -237,35 +236,6 @@ export default function Contact() {
                 )
               })}
             </div>
-
-            {/* Business Hours */}
-            <div className="mb-8">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                <Clock className="w-5 h-5 mr-2" />
-                Horario de Atención
-              </h4>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="space-y-3">
-                    {businessHours.map((schedule, index) => (
-                      <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-                        <span className="font-medium text-gray-900">{schedule.day}</span>
-                        <div className="text-right">
-                          <span className="text-gray-600">{schedule.hours}</span>
-                          <Badge 
-                            variant={schedule.status === "Abierto" ? "default" : "secondary"}
-                            className="ml-2 text-xs"
-                          >
-                            {schedule.status}
-                          </Badge>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
             {/* Social Links */}
             <div>
               <h4 className="text-lg font-semibold text-gray-900 mb-4">Síguenos</h4>
@@ -290,143 +260,27 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Columna derecha: Horario de Atención */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Envíanos un Mensaje</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">Horario de Atención</h3>
             <Card>
               <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Nombre completo *
-                      </label>
-                      <Input
-                        type="text"
-                        name="name"
-                        required
-                        placeholder="Tu nombre"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email *
-                      </label>
-                      <Input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="tu@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Teléfono
-                      </label>
-                      <Input
-                        type="tel"
-                        name="phone"
-                        placeholder="+52 51 5127 62"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Empresa
-                      </label>
-                      <Input
-                        type="text"
-                        name="company"
-                        placeholder="Nombre de tu empresa"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Tipo de Proyecto
-                      </label>
-                      <select
-                        name="projectType"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      >
-                        <option value="">Selecciona una opción</option>
-                        <option value="web">Aplicación Web</option>
-                        <option value="mobile">Aplicación Móvil</option>
-                        <option value="ecommerce">E-commerce</option>
-                        <option value="design">Diseño UX/UI</option>
-                        <option value="consulting">Consultoría</option>
-                        <option value="other">Otro</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Presupuesto Estimado
-                      </label>
-                      <select
-                        name="budget"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      >
-                        <option value="">Selecciona una opción</option>
-                        <option value="5k-10k">$5,000 - $10,000</option>
-                        <option value="10k-25k">$10,000 - $25,000</option>
-                        <option value="25k-50k">$25,000 - $50,000</option>
-                        <option value="50k+">$50,000+</option>
-                        <option value="discuss">Prefiero discutirlo</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Mensaje *
-                    </label>
-                    <Textarea
-                      name="message"
-                      required
-                      placeholder="Cuéntanos sobre tu proyecto..."
-                      rows={5}
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full"
-                    disabled={formStatus === 'loading'}
-                  >
-                    {formStatus === 'loading' ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Enviando...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-4 w-4" />
-                        Enviar Mensaje
-                      </>
-                    )}
-                  </Button>
-
-                  {formMessage && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className={`p-4 rounded-lg ${
-                        formStatus === 'success' 
-                          ? 'bg-green-50 text-green-800 border border-green-200' 
-                          : 'bg-red-50 text-red-800 border border-red-200'
-                      }`}
-                    >
-                      <div className="flex items-center">
-                        <CheckCircle className="w-5 h-5 mr-2" />
-                        {formMessage}
+                <div className="space-y-3">
+                  {businessHours.map((schedule, index) => (
+                    <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
+                      <span className="font-medium text-gray-900">{schedule.day}</span>
+                      <div className="text-right">
+                        <span className="text-gray-600">{schedule.hours}</span>
+                        <Badge 
+                          variant={schedule.status === "Abierto" ? "default" : "secondary"}
+                          className="ml-2 text-xs"
+                        >
+                          {schedule.status}
+                        </Badge>
                       </div>
-                    </motion.div>
-                  )}
-                </form>
+                    </div>
+                  ))}
+                </div>
               </CardContent>
             </Card>
           </div>

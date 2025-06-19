@@ -105,7 +105,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/softory-2.png" />
         <link rel="canonical" href="https://softory.com" />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#2563eb" />
