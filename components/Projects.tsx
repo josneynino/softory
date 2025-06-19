@@ -53,8 +53,7 @@ const completedProjects = [
       rating: 5
     },
     links: {
-      live: "https://finzo-web.vercel.app",
-      github: "https://github.com/jozneydeveloper/finzo"
+      live: "https://finzo-web.vercel.app"
     }
   },
   {
@@ -79,60 +78,32 @@ const completedProjects = [
       rating: 5
     },
     links: {
-      live: "https://fuego-corte.vercel.app",
-      github: "https://github.com/jozneydeveloper/fuego-corte"
+      live: "https://fuego-corte.vercel.app"
     }
   },
   {
     id: 3,
-    title: "Dashboard Corporativo",
-    description: "Panel de control empresarial con análisis de datos, reportes y gestión de usuarios.",
+    title: "Glow Up Digital",
+    description: "Plataforma integral de marketing digital y gestión de redes sociales para empresas que buscan potenciar su presencia online.",
     category: "web",
-    image: "/placeholder.svg?height=300&width=400",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],
+    image: "/assets/gud-dash.png",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     status: "Completado",
-    duration: "10 semanas",
+    duration: "12 semanas",
     metrics: {
-      users: "1,200+",
-      dataPoints: "2M+",
-      uptime: "99.9%",
-      efficiency: "35%"
+      users: "800+",
+      revenue: "$25,000+",
+      engagement: "85%",
+      growth: "200%"
     },
     testimonial: {
-      name: "Ana Martínez",
-      role: "CTO, TechCorp",
-      content: "El dashboard nos permite tomar decisiones basadas en datos en tiempo real. La interfaz es intuitiva y el rendimiento excepcional.",
+      name: "Sofia Ramírez",
+      role: "CEO, Glow Up Digital",
+      content: "Softory creó una plataforma que revolucionó nuestro negocio de marketing digital. La automatización y análisis de datos nos permitió escalar de manera increíble.",
       rating: 5
     },
     links: {
-      live: "https://dashboard.techcorp.com",
-      github: "https://github.com/jozneydeveloper/corporate-dashboard"
-    }
-  },
-  {
-    id: 4,
-    title: "Rediseño UX/UI E-commerce",
-    description: "Rediseño completo de experiencia de usuario para plataforma de ventas online.",
-    category: "design",
-    image: "/placeholder.svg?height=300&width=400",
-    technologies: ["Figma", "Adobe XD", "Prototyping"],
-    status: "Completado",
-    duration: "4 semanas",
-    metrics: {
-      conversion: "45%",
-      engagement: "78%",
-      satisfaction: "4.9/5",
-      bounceRate: "-30%"
-    },
-    testimonial: {
-      name: "Luis Fernández",
-      role: "Director de Marketing, FashionStore",
-      content: "El rediseño mejoró dramáticamente nuestra conversión. Los usuarios encuentran lo que buscan más rápido y compran más.",
-      rating: 5
-    },
-    links: {
-      live: "https://fashionstore.com",
-      behance: "https://behance.net/softory-design"
+      live: "https://glow-up-digital.vercel.app/"
     }
   }
 ]
@@ -157,13 +128,13 @@ const inDevelopmentProjects = [
     link: "https://finzo-web.vercel.app"
   },
   {
-    title: "E-commerce Moderno",
-    description: "Plataforma de comercio electrónico con panel administrativo completo y pasarela de pagos integrada.",
-    image: "/placeholder.svg?height=300&width=400",
-    technologies: ["React", "Node.js", "MongoDB"],
+    title: "Glow Up Digital",
+    description: "Plataforma integral de marketing digital y gestión de redes sociales para empresas que buscan potenciar su presencia online.",
+    image: "/assets/gud-dash.png",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     status: "En desarrollo",
-    progress: 40,
-    link: "https://github.com/jozneydeveloper"
+    progress: 90,
+    link: "https://glow-up-digital.vercel.app/"
   }
 ]
 
@@ -347,14 +318,6 @@ export default function Projects() {
                             Ver Proyecto
                           </a>
                         </Button>
-                        {project.links.github && (
-                          <Button variant="outline" size="sm" asChild>
-                            <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                              <Github className="w-4 h-4 mr-1" />
-                              Código
-                            </a>
-                          </Button>
-                        )}
                       </div>
                     </CardContent>
                   </Card>

@@ -18,22 +18,22 @@ import { motion } from "framer-motion"
 
 const footerLinks = {
   company: [
-    { name: "Sobre Nosotros", href: "#equipo" },
-    { name: "Nuestro Equipo", href: "#equipo" },
-    { name: "Carreras", href: "#contacto" },
-    { name: "Blog", href: "#blog" }
+    { name: "Sobre Nosotros", href: "/sobre-softory" },
+    { name: "Nuestro Equipo", href: "/equipo" },
+    { name: "Carreras", href: "/contacto" },
+    { name: "Metodología", href: "/metodologia" }
   ],
   services: [
-    { name: "Desarrollo Web", href: "#servicios" },
-    { name: "Desarrollo Móvil", href: "#servicios" },
-    { name: "Consultoría", href: "#servicios" },
-    { name: "Diseño UX/UI", href: "#servicios" }
+    { name: "Desarrollo Web", href: "/servicios" },
+    { name: "Desarrollo Móvil", href: "/servicios" },
+    { name: "Consultoría", href: "/servicios" },
+    { name: "Diseño UX/UI", href: "/servicios" }
   ],
   resources: [
-    { name: "Documentación", href: "#blog" },
-    { name: "Tutoriales", href: "#blog" },
-    { name: "Recursos Gratuitos", href: "#blog" },
-    { name: "Soporte", href: "#contacto" }
+    { name: "Casos de Éxito", href: "/casos-exito" },
+    { name: "Proyectos", href: "/proyectos" },
+    { name: "Precios", href: "/precios" },
+    { name: "Soporte", href: "/contacto" }
   ],
   legal: [
     { name: "Política de Privacidad", href: "/privacy" },

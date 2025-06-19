@@ -2,6 +2,11 @@ import type { Metadata } from 'next'
 import { Outfit, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import Link from "next/link"
+import Navbar from '@/components/Navbar'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
 
 const outfit = Outfit({ 
   subsets: ['latin'],
@@ -116,9 +121,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main id="main-content" tabIndex={-1}>
-            {children}
-          </main>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <div className="flex-1 pt-16">
+              <Breadcrumbs />
+              <main id="main-content" tabIndex={-1}>
+                {children}
+              </main>
+            </div>
+            <Footer />
+            <WhatsAppButton />
+          </div>
         </ThemeProvider>
       </body>
     </html>
