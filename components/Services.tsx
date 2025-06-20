@@ -5,6 +5,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 
+// Helper para gradiente de texto
+const GradientText = ({ children }: { children: React.ReactNode }) => (
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-fuchsia-500">
+    {children}
+  </span>
+);
+
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId)
   if (element) {
@@ -14,7 +21,7 @@ const scrollToSection = (sectionId: string) => {
 
 const services = [
   {
-    icon: <Code className="w-8 h-8 text-blue-600" />,
+    icon: <Code className="w-8 h-8" />,
     title: "Desarrollo Web",
     description: "Creamos sitios web modernos y aplicaciones web progresivas.",
     longDescription: "Desarrollamos soluciones web personalizadas que combinan diseño atractivo con funcionalidad robusta. Nuestras aplicaciones web son rápidas, seguras y optimizadas para todos los dispositivos.",
@@ -33,7 +40,7 @@ const services = [
     image: "/assets/images/services/web-dev.svg"
   },
   {
-    icon: <Smartphone className="w-8 h-8 text-blue-600" />,
+    icon: <Smartphone className="w-8 h-8" />,
     title: "Desarrollo Móvil",
     description: "Desarrollamos aplicaciones nativas y multiplataforma.",
     longDescription: "Creamos aplicaciones móviles que ofrecen una experiencia de usuario excepcional. Nuestras soluciones son nativas o multiplataforma, dependiendo de tus necesidades específicas.",
@@ -52,7 +59,7 @@ const services = [
     image: "/assets/images/services/mobile-dev.svg"
   },
   {
-    icon: <Users className="w-8 h-8 text-blue-600" />,
+    icon: <Users className="w-8 h-8" />,
     title: "Consultoría Tecnológica",
     description: "Asesoramiento estratégico en tecnología y transformación digital.",
     longDescription: "Proporcionamos consultoría especializada para ayudar a las empresas a aprovechar al máximo la tecnología. Nuestro enfoque estratégico impulsa la innovación y el crecimiento.",
@@ -71,7 +78,7 @@ const services = [
     image: "/assets/images/services/consulting.svg"
   },
   {
-    icon: <Palette className="w-8 h-8 text-blue-600" />,
+    icon: <Palette className="w-8 h-8" />,
     title: "Diseño UX/UI",
     description: "Creamos interfaces intuitivas y experiencias de usuario excepcionales.",
     longDescription: "Nuestro equipo de diseño crea interfaces que no solo se ven bien, sino que también son intuitivas y fáciles de usar. Nos enfocamos en la experiencia del usuario y la usabilidad.",
@@ -96,7 +103,9 @@ export default function Services() {
     <section id="servicios" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nuestros Servicios</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Nuestros <GradientText>Servicios</GradientText>
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ofrecemos soluciones tecnológicas integrales para impulsar tu negocio
           </p>
@@ -106,12 +115,14 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden min-w-[300px] flex-1"
+              className="group bg-white rounded-2xl shadow-lg overflow-hidden min-w-[300px] flex-1 border border-transparent hover:border-blue-500 transition-all duration-300"
             >
               <div className="p-6">
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className="w-16 h-16 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
-                    {service.icon}
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-50 to-fuchsia-50 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <div className="text-blue-600 group-hover:text-fuchsia-600 transition-colors">
+                      {service.icon}
+                    </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-gray-600 text-sm">{service.description}</p>
@@ -155,7 +166,7 @@ export default function Services() {
                 <div className="mt-6">
                   <Button
                     variant="default"
-                    className="w-full bg-blue-700 hover:bg-blue-800 text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
+                    className="w-full bg-gradient-to-r from-blue-600 to-fuchsia-600 hover:from-blue-700 hover:to-fuchsia-700 text-white focus:outline-none focus:ring-4 focus:ring-blue-300 shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300"
                     onClick={() => scrollToSection('projects')}
                     aria-label={`Ver proyectos de ${service.title}`}
                   >
